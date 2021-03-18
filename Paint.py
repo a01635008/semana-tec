@@ -9,7 +9,7 @@ Exercises
 
 from turtle import up, setup, onscreenclick
 from turtle import onkey, color, done, goto, down, begin_fill
-from turtle import forward, left, end_fill, listen, undo
+from turtle import forward, left, end_fill, listen, undo, circle
 from freegames import vector
 
 
@@ -35,10 +35,17 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
+def draw_circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
+    r = end.x - start.x
+    circle(r/2)
+
+    end_fill()
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -80,7 +87,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', draw_circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
