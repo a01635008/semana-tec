@@ -24,8 +24,8 @@ def initialize():
         for y in range(-300, 300, 10):
             cells[x, y] = False
 
-    for x in range(-50, 50, 10):
-        for y in range(-50, 50, 10):
+    for x in range(-30, 300, 10):
+        for y in range(-300, 300, 10):
             cells[x, y] = choice([True, False])
 
 def step():
