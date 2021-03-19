@@ -50,7 +50,7 @@ PianoKey_Setting = [['C', "'1'"],
                     ['A', "'6'"],
                     ['B', "'7'"]]
 
-Obj_PianoKeys = {};    
+Obj_PianoKeys = {}
 
 
 def initPiano():                    
@@ -75,9 +75,10 @@ def on_release_fun(key):
 
 
 if __name__ == "__main__":
-    print("Hello World");
-    initPiano();
-    with pynput.keyboard.Listener(on_press = on_press_fun, on_release = on_release_fun) as listener:
-        listener.join();
+    print("Hello World")
+    initPiano()
+    with pynput.keyboard.Listener(on_press=on_press_fun, on_release=
+    on_release_fun) as listener:
+        listener.join()
         
     
