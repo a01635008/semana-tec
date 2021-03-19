@@ -8,7 +8,7 @@ Exercises
 """
 
 from turtle import up, setup, onscreenclick
-from turtle import onkey, color, done, goto, down, begin_fill, pos
+from turtle import onkey, color, done, goto, down, begin_fill
 from turtle import forward, left, end_fill, listen, undo, circle
 from freegames import vector
 
@@ -52,7 +52,7 @@ def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
-    down() 
+    down()
     length1 = end.x - start.x
     length2 = length1
 
@@ -90,8 +90,6 @@ def star(start, end):
     for n in range(13):
         forward(100)
         left(150)
-        
-    
     end_fill()
 
 
