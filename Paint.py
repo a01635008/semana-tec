@@ -8,7 +8,7 @@ Exercises
 """
 
 from turtle import up, setup, onscreenclick
-from turtle import onkey, color, done, goto, down, begin_fill
+from turtle import onkey, color, done, goto, down, begin_fill, pos
 from turtle import forward, left, end_fill, listen, undo, circle
 from freegames import vector
 
@@ -47,12 +47,12 @@ def draw_circle(start, end):
 
     end_fill()
 
+
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
-    down()
-    
+    down() 
     length1 = end.x - start.x
     length2 = length1
 
@@ -60,9 +60,7 @@ def rectangle(start, end):
     for count in range(4):
         if count == 1 or count == 3:
             length2 = length2/2
-
         forward(length2)
-        
         length2 = length1
         left(90)
 
@@ -78,8 +76,26 @@ def triangle(start, end):
     begin_fill()
 
     r = end.x - start.x
-    circle(r,360, 3)
+    circle(r, 360, 3)
 
+    end_fill()
+
+
+def star(start, end):
+    "Draw sun from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    n = 1
+    begin_fill()
+    while True:
+        forward(100)
+        left(150)
+        if n == 20:
+            False
+        n = n + 1
+        
+    
     end_fill()
 
 
@@ -117,4 +133,5 @@ onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', draw_circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
+onkey(lambda: store('shape', star), 'S')
 done()
