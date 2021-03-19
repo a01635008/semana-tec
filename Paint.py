@@ -87,7 +87,7 @@ def star(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-    for n in range(1:30):
+    for n in range(13):
         forward(100)
         left(150)
         
