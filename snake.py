@@ -10,18 +10,18 @@ Exercises
 """
 
 from turtle import update, clear, ontimer, onkey, tracer, listen, hideturtle
-from turtle import done, setup
+from turtle import done, setup, bgcolor
 from random import randrange
 import random
 from freegames import square, vector
 
-colors = ['green', 'black', 'yellow', 'blue', 'gray']
+colors = ['#8c00fc', '#3500ff', '#01fe01', '#fffe37', '#ff8600']
 color_snake = random.choice(colors)
 color_square = random.choice(colors)
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
+bgcolor("black")
 
 def change(x, y):
     "Change snake direction."
@@ -31,7 +31,7 @@ def change(x, y):
 
 def inside(head):
     "Return True if head inside boundaries."
-    return -200 < head.x < 190 and -200 < head.y < 190
+    return -201 < head.x < 191 and -201 < head.y < 191
 
 
 def move():
@@ -56,7 +56,7 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, color_snake)
+        square(body.x, body.y, 9, random.choice(colors))
 
     square(food.x, food.y, 9, color_square)
     update()
