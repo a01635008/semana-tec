@@ -86,14 +86,10 @@ def star(start, end):
     up()
     goto(start.x, start.y)
     down()
-    n = 1
     begin_fill()
-    while True:
+    for n in range(1:30):
         forward(100)
         left(150)
-        if n == 20:
-            False
-        n = n + 1
         
     
     end_fill()
