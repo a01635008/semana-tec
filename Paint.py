@@ -52,6 +52,21 @@ def rectangle(start, end):
     up()
     goto(start.x, start.y)
     down()
+    
+    length1 = end.x - start.x
+    length2 = length1
+
+    begin_fill()
+    for count in range(4):
+        if count == 1 or count == 3:
+            length2 = length2/2
+
+        forward(length2)
+        
+        length2 = length1
+        left(90)
+
+    end_fill()
 
 
 def triangle(start, end):
